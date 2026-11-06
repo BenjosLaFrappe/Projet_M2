@@ -1,5 +1,4 @@
-from PySide6.QtCore import Qt
-from PySide6.QtGui import QCloseEvent
+
 from PySide6.QtWidgets import QMainWindow, QPushButton, QTextEdit, QLineEdit, QSlider, QAbstractSlider, QWidget, QGridLayout, QApplication
 from menu import creerMenu
 from bouton import display_values, bouton, display_2D, display_3D, display_2D_stop, display_3D_stop, display_KINOVA, display_KINOVA_stop, display_global, display_global_stop
