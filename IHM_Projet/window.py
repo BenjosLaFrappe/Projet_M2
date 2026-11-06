@@ -1,5 +1,6 @@
 from PySide6.QtCore import Qt
-from PySide6.QtWidgets import QMainWindow, QPushButton, QTextEdit, QLineEdit, QSlider, QAbstractSlider, QWidget, QGridLayout
+from PySide6.QtGui import QCloseEvent
+from PySide6.QtWidgets import QMainWindow, QPushButton, QTextEdit, QLineEdit, QSlider, QAbstractSlider, QWidget, QGridLayout, QApplication
 from menu import creerMenu
 from bouton import display_values, bouton, display_2D, display_3D, display_2D_stop, display_3D_stop, display_KINOVA, display_KINOVA_stop, display_global, display_global_stop
 from test import fenetreCurseur
@@ -10,6 +11,8 @@ class mainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("Ma fenêtre")
+
+        
 
         creerMenu(self)          # on donne la fenêtre au fichier menu.py
 
@@ -99,7 +102,10 @@ class mainWindow(QMainWindow):
         self.global_button.clicked.connect(display_global)
         self.global_button_stop.clicked.connect(enabled_buttons)
         self.global_button_stop.clicked.connect(display_global_stop)
-        
+
+
+    
+
         """
         self.slider = QSlider(Qt.Horizontal)
         self.slider.setMaximum(100)
@@ -107,3 +113,7 @@ class mainWindow(QMainWindow):
         self.slider.setValue(50)
         self.slider.sliderReleased.connect(lambda: display_values(self.slider.value()))
         """
+
+    def closeEvent(self, event):
+        QApplication.quit()
+        display_global_stop

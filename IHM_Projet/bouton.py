@@ -12,9 +12,15 @@ class bouton(QPushButton):
 		return self.isChecked()
 
 
+cam2D = "sum.py"
+cam3D = "sum.py"
+kinova = "sum.py"
+"""
 cam2D = "C:\\Users\\demst\\Documents\\Espace de travail\\ET\\Camera2D.py"
 cam3D = "C:\\Users\\demst\\Documents\\Espace de travail\\ET\\Camera3DV2.py"
 kinova = "C:\\Users\\demst\\Documents\\Espace de travail\\ET\\KINOVA py32 35 V2.py"
+"""
+
 
 cam2D_open = None
 cam3D_open = None

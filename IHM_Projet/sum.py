@@ -1,2 +1,3 @@
 while True:
-    print("le caca est cuit")
+    txt = input("Entrez un texte")
+    print(txt)
