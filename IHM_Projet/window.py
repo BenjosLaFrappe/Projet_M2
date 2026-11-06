@@ -1,8 +1,9 @@
 from PySide6.QtCore import Qt
 from PySide6.QtWidgets import QMainWindow, QPushButton, QTextEdit, QLineEdit, QSlider, QAbstractSlider, QWidget, QGridLayout
 from menu import creerMenu
-from bouton import display_values, bouton, display_2D, display_3D, display_2D_stop, display_3D_stop, display_KINOVA, display_KINOVA_stop
+from bouton import display_values, bouton, display_2D, display_3D, display_2D_stop, display_3D_stop, display_KINOVA, display_KINOVA_stop, display_global, display_global_stop
 from test import fenetreCurseur
+
 
 
 class mainWindow(QMainWindow):
@@ -95,8 +96,9 @@ class mainWindow(QMainWindow):
 
 
         self.global_button.clicked.connect(disbled_buttons)
+        self.global_button.clicked.connect(display_global)
         self.global_button_stop.clicked.connect(enabled_buttons)
-
+        self.global_button_stop.clicked.connect(display_global_stop)
         
         """
         self.slider = QSlider(Qt.Horizontal)
