@@ -50,17 +50,14 @@ def display_KINOVA():
 def display_global():
 	global cam2D_open, cam3D_open, kinova_open
 	if cam2D_open is None or cam2D_open.poll() is not None:
-			print("La caméra 2D est lancée")
-			cam2D_open = Popen([sys.executable, cam2D])
+			display_2D()
 	if cam3D_open is None or cam3D_open.poll() is not None:
-		print("La caméra 3D est lancée")
-		cam3D_open = Popen([sys.executable, cam3D])
-		print(cam3D_open.stdout)
+		display_3D()
 	if kinova_open is None or kinova_open.poll() is not None:
-			print("Le robot est lancé")
-			kinova_open = Popen([sys.executable, kinova])
-			print(kinova_open.stdout)
+		display_KINOVA()
 
+
+		
 def display_2D_stop():
 	global cam2D_open
 	if cam2D_open is not None and cam2D_open.poll() is None:
