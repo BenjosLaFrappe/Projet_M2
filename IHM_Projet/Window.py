@@ -43,6 +43,10 @@ class Cam3DWindow(BaseWindow):
     def __init__(self):
         super().__init__("Caméra 3D")
 
+        self.text = QTextEdit()
+        self.setCentralWidget(self.text)
+        self.text.setReadOnly(True)
+        self.text.setText("Fenêtre de la caméra 3D")
 
 
 
@@ -51,3 +55,8 @@ class Cam3DWindow(BaseWindow):
 class KinovaWindow(BaseWindow):
     def __init__(self):
         super().__init__("Bras Kinova")
+
+        self.text = QTextEdit()
+        self.setCentralWidget(self.text)
+        self.text.setReadOnly(True)
+        self.text.setText("Fenêtre du bras robot KINOVA")
